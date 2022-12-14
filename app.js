@@ -7,7 +7,6 @@ const getAdvice = () => {
 const generateAdvice = (data) => {
   const id = data.slip.id;
   const advice = data.slip.advice;
-  //console.log(`${id}: ${advice}`);
 
   const adviceCard = `
       <h1>Advice #${id}</h1>
