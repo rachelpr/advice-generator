@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-    <script src="./app.js"></script>
     <link
       rel="icon"
       type="image/png"
@@ -17,13 +16,21 @@
   </head>
   <body>
     <main class="container">
-        <div class="advice-card"></div>
+        <div class="advice-card">
+          <p class="advice-id">
+            Advice # <span id="advice-id"></span>
+          </p>
+          <p class="advice-text">Loading...</p>
+        </div>
         <div>
           <img id="divider" src="./images/pattern-divider-mobile.svg" alt="line pattern to divide the advice and button">
         </div>
+        <div>
+          <button id="dice" onClick="window.location.reload()"><img src="./images/icon-dice.svg" alt="Dice" /></a></button>
+        </div>
       </main>
-      <div>
-        <button id="dice" onClick="window.location.reload()"><img src="./images/icon-dice.svg" alt="Dice" /></a></button>
-      </div>
+
+      <!-- Link to app.js script -->
+      <script src="./app.js"></script>
   </body>
 </html>
