@@ -1,19 +1,20 @@
+// Variables
+const dice = document.getElementById("dice");
+const num = document.getElementById("advice-id");
+const advice = document.querySelector(".advice-text");
+
 const getAdvice = () => {
   fetch("https://api.adviceslip.com/advice")
     .then((data) => data.json())
-    .then((data) => generateAdvice(data));
+    .then((data) => data.slip)
+    .then((data) => {
+      num.textContent = data.id;
+      advice.textContent = data.advice;
+    });
 };
 
-const generateAdvice = (data) => {
-  const id = data.slip.id;
-  const advice = data.slip.advice;
-
-  const adviceCard = `
-      <h1>Advice #${id}</h1>
-      <p>"${advice}"</p>
-  `;
-
-  document.querySelector(".advice-card").innerHTML += adviceCard;
-};
+dice.addEventListener("click", function () {
+  getAdvice();
+});
 
 getAdvice();
