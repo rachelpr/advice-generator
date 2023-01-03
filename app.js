@@ -9,7 +9,7 @@ const getAdvice = () => {
     .then((data) => data.slip)
     .then((data) => {
       num.textContent = data.id;
-      advice.textContent = data.advice;
+      advice.textContent = `"${data.advice}"`;
     });
 };
 
